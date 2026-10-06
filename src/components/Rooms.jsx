@@ -1,6 +1,6 @@
 import { ArrowUpRight, Maximize, BedDouble, Users } from 'lucide-react'
 import { rooms, img } from '../data/content.js'
-import { Reveal, SplitHeading, MaskImage } from './Motion.jsx'
+import { Reveal, SplitHeading } from './Motion.jsx'
 
 export default function Rooms() {
   return (

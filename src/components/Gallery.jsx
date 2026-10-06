@@ -1,4 +1,3 @@
-import { ArrowUpRight } from 'lucide-react'
 import { gallery, img } from '../data/content.js'
 import { Reveal, SplitHeading, MaskImage } from './Motion.jsx'
 
@@ -42,14 +41,6 @@ export default function Gallery() {
                 alt={g.alt}
                 delay={i * 80}
                 className="h-full w-full"
-              />
-              <img
-                src={img(g.id, g.span === 'wide' ? 1000 : 700)}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-                className="absolute inset-0 h-full w-full object-cover opacity-0"
               />
               <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/75 via-ink/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <p className="p-4 text-[13px] leading-snug font-medium text-bone">

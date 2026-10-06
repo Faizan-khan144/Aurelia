@@ -58,9 +58,12 @@ export function MaskImage({ src, alt, className = '', delay = 0, loading = 'lazy
           io.disconnect()
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
     )
-    io.observe(el)
+    // The element itself is clipped (clip-path: inset(0 0 100% 0)), so Chrome
+    // reports a zero intersection ratio for it forever. Observe the unclipped
+    // wrapper instead, otherwise the reveal never fires.
+    io.observe(el.parentElement ?? el)
     return () => io.disconnect()
   }, [])
 
